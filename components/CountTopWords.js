@@ -1,21 +1,28 @@
 const commonWords = {};
 
-const CountTopWords = (tweets,num) => {
- 	
+const CountTopWords = (tweets,num=20) => {
+	const topWords = [];
 	const cleaned = tweets.map((tweet => {
 		return removeStopWords(tweet.full_text);
 	}));
    
-   
-   var sortable = [];
-   for (var word in cleaned) {
-	   sortable.push([word,cleaned[word]])
-   }
-   sortable.sort(function(a,b) {
-	   return b[1] - a[1] 
-   })
 
-    return ([{'hello':20}, {'bye':18}]);
+	
+	let sortable = [];
+	for (let word in commonWords) {
+		sortable.push({[word] : commonWords[word]})
+	}
+	
+	const sorted = sortable.sort(function(a,b) {
+		let counta = Object.values(a);
+		let countb = Object.values(b);
+		return countb - counta;
+	})
+	for (let i=0; i < num;i++) {
+		topWords.push(sorted[i]);
+	}
+	console.log(topWords);
+   return (topWords);
 }
 
 const removeStopWords = (source) => {
@@ -39,7 +46,10 @@ const removeStopWords = (source) => {
 
 
 const stopWords = [
+	'-',
+	'â»',
 	'a',
+	'&amp;',
 	'about',
 	'above',
 	'across',

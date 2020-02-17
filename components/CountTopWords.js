@@ -32,7 +32,6 @@ const removeStopWords = (source) => {
 		let word = cleaned[i].toLowerCase();
 	
 		if (stopWords.indexOf(word) === -1) {
-			// add word to dictionary or increase count
 			if (commonWords[word] === undefined) {
 				commonWords[word] = 1;
 			} else

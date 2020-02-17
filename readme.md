@@ -2,9 +2,9 @@
 
 A simple single page app that retrieves 100 
 
-Front End was built utilizing the [React Library]https://reactjs.org/
-with [Next.JS]https://nextjs.org/\
-Other library included is [Moment.js]https://momentjs.com/ to display pretty dates.
+Front End was built utilizing the [React Library](https://reactjs.org/)
+with [Next.JS](https://nextjs.org/)\
+Other library included is [Moment.js](https://momentjs.com/) to display pretty dates.
 
 
 

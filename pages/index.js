@@ -2,32 +2,49 @@
 import React, {useState} from 'react'
 import fetch from 'isomorphic-unfetch'
 import Tweet from '../components/Tweet'
-import CountTopWords from '../components/CountTopWords'
 import WordVisualizer from '../components/WordVisualizer'
 
  function HomePage ({tweets}) {
-    const [topwords,setTopWords] = useState(CountTopWords(tweets))
+ 
     const tweetList =  tweets.map((tw,i) => <Tweet key={i} data={tw}/>)
     
  
     return (
-        <div>
+        <div >
+            <div className="header">
+                Meshify
+            </div>
             <div className='tweets-container'>
                 {tweetList}
             </div>
             <div className='vis-container'>
-                <WordVisualizer topwords={topwords}/>
+                <WordVisualizer tweets={tweets}/>
             </div>
     <style jsx>{`
-        .tweets-container {
+        .header {
+            background-color:#333;
+            height:80px;
+            color:#fff;
+            line-height: 80px;
+            font-size:2em;
             padding-left:20px;
-            background-color:black;
+        }
+        .tweets-container {
+            padding-top:50px;
+            padding-right:20px;
+            padding-left:20px;
+            background-color:#444;
         }
         .vis-container {
             position:fixed;
+            right:0px;
+            left:0px;
             bottom:0;
-            display:flex;
-            background-color:black;
+            padding-left: 20px;
+            padding-right: 20px;
+            height:350px;
+            background-color:#444;
+            
         }
     `}</style>
     <style jsx global>

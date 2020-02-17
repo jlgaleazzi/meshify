@@ -30,9 +30,9 @@ return(
     .tweet {
         padding-top:10px;
         padding-bottom:10px;
-        border:1px inset gray;
+        border:1px inset #000;
         padding-left: 5px;
-        background-color: black;
+        background-color: #333;
         color:white;
         display:flex;
         flex-wrap:wrap;

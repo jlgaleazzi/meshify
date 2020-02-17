@@ -21,7 +21,7 @@ const CountTopWords = (tweets,num=20) => {
 	for (let i=0; i < num;i++) {
 		topWords.push(sorted[i]);
 	}
-	console.log(topWords);
+	
    return (topWords);
 }
 
